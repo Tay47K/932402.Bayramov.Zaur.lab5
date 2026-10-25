@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ЛР №5 · DOM &amp; localStorage · Вариант 14 — Палитра цветов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./lab5.css" />
+</head>
+<body>
+  <div class="grain"></div>
+
+  <main class="stage">
+    <header class="masthead">
+      <div class="top-row">
+        <div class="badge" data-testid="lab-badge">Лабораторная работа №5 · DOM</div>
+        <nav class="labnav">
+          <a href="./lab.html" data-testid="nav-lab4">← ЛР №4</a>
+        </nav>
+      </div>
+      <h1 class="title">Палитра<span class="amp">·</span>цветов</h1>
+      <p class="subtitle">Вариант 14 — «Дизайнер и визуализатор». Плитки цветов с названиями: добавление, удаление, темы и скрытие — с сохранением в localStorage.</p>
+    </header>
+
+    <div class="toolbar" data-testid="toolbar">
+      <button class="btn btn-primary" id="add-btn" data-testid="add-color-btn"><span class="plus">+</span> Добавить цвет</button>
+      <button class="btn btn-ghost" id="toggle-palette-btn" data-testid="toggle-palette-btn">Скрыть палитру</button>
+      <button class="btn btn-ghost" id="theme-btn" data-testid="theme-toggle-btn">🌙 Тема</button>
+      <button class="btn btn-danger" id="clear-btn" data-testid="clear-palette-btn">Очистить палитру</button>
+    </div>
+
+    <section class="palette-wrap" id="palette-wrap" data-testid="palette-wrap">
+      <div class="palette-meta">
+        <span class="count-label">Цветов в палитре:</span>
+        <span class="count-value" id="color-count" data-testid="color-count">0</span>
+      </div>
+      <div class="palette" id="palette" data-testid="palette"><!-- плитки создаются через JS --></div>
+      <p class="empty-note" id="empty-note" data-testid="empty-note" hidden>Палитра пуста. Нажмите «Добавить цвет», чтобы создать первую плитку.</p>
+    </section>
+
+    <p class="status" id="status" data-testid="status" role="status" aria-live="polite"></p>
+
+    <footer class="footer">Состояние (цвета, тема, видимость палитры) сохраняется в localStorage и восстанавливается после перезагрузки.</footer>
+  </main>
+
+  <script src="./lab5.js"></script>
+</body>
+</html>
